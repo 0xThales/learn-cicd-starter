@@ -42,7 +42,7 @@ func TestGetAPIKey(t *testing.T) {
 		expectedKey := "test-api-key"
 		headers := http.Header{}
 		headers.Set("Authorization", "ApiKey "+expectedKey)
-		
+
 		key, err := GetAPIKey(headers)
 		if err != nil {
 			t.Errorf("unexpected error: %v", err)
