@@ -25,6 +25,7 @@ jobs:
         uses: "google-github-actions/auth@v2"
         with:
           credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+          project_id: "notely-459322"
 
       - name: "Set up Cloud SDK"
         uses: "google-github-actions/setup-gcloud@v2"
@@ -36,4 +37,4 @@ jobs:
         run: "gcloud config set project notely-459322"
 
       - name: "Build docker and push to GCP"
-        run: "gcloud builds submit --tag us-central1-docker.pkg.dev/notely-459322/notely-ar-repo/notely:latest"
+        run: "gcloud builds submit --project=notely-459322 --tag us-central1-docker.pkg.dev/notely-459322/notely-ar-repo/notely:latest"
