@@ -35,8 +35,5 @@ jobs:
       - name: "Use gcloud CLI"
         run: "gcloud info"
 
-      - name: "Authenticate to GCP"
-        run: "gcloud auth login"
-
       - name: "Build docker and push to GCP"
         run: "gcloud builds submit --tag us-central1-docker.pkg.dev/notely-459322/notely-ar-repo/notely:latest"
